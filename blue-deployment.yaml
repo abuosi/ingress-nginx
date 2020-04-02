@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: blue-deploy
+spec:
+    selector:
+        matchLabels:
+            app: blue
+    template:
+        metadata:
+            labels:
+                app: blue
+        spec:
+            containers:
+            - name: meu-blue
+              image: abuosi/nginx-blue:1.0
+              ports:
+              - containerPort: 80
