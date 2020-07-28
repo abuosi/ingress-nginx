@@ -4,7 +4,7 @@ metadata:
     name: subdiretorio
 spec:
     rules:
-    - host: <DOMAIN-NAME>
+    - host: k8s-homelab.com.br
       http:
         paths:
         - path: /blue
