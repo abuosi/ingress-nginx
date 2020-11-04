@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: green-deploy
+    name: nginx-green
 spec:
     selector:
         matchLabels:
-            app: green
+            app: nginx-green
     template:
         metadata:
             labels:
-                app: green
+                app: nginx-green
         spec:
             containers:
-            - name: meu-green
-              image: abuosi/nginx-green:1.0
+            - name: nginx-green
+              image: abuosi/nginx:green
               ports:
               - containerPort: 80

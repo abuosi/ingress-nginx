@@ -4,15 +4,15 @@ metadata:
     name: subdominio
 spec:
     rules:
-    - host: blue.k8s-homelab.com.br
+    - host: blue.k3s-homelab.local
       http:
         paths:
         - backend:
-            serviceName: blue-service
+            serviceName: nginx-blue
             servicePort: 80
-    - host: green.k8s-homelab.com.br
+    - host: green.k3s-homelab.local
       http:
         paths:
         - backend:
-            serviceName: green-service
+            serviceName: nginx-green
             servicePort: 80

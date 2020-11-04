@@ -18,8 +18,8 @@ O teste tem o objetivo de validar o roteamento do ingress entre os deploys de du
 
 Com o [INGRESS-NGINX] funcionando, efetue o deploy das duas aplicações
 ```
-kubectl apply -f ./blue-deployment.yaml
-kubectl apply -f ./green-deployment.yaml
+kubectl apply -f ./k8s/blue-deployment.yaml
+kubectl apply -f ./k8s/green-deployment.yaml
 ```
 Verifique se os deploys estão funcionando
 
@@ -34,7 +34,7 @@ green-deploy   1/1     1            1           12h
 Efetue o deploy dos serviços
 
 ```
-kubectl apply -f ./services.yaml
+kubectl apply -f ./k8s/services.yaml
 ```
 
 Agora verifique se os serviços estão funcionando
@@ -53,7 +53,7 @@ Para fazer o deploy do roteamento das aplicações é necessário antes ajustar 
 Com o ajsute realizado, efetue o deploy das definições do ingress para as aplicações
 
 ```
-kubectl apply -f ./ingress-subdominio.yaml
+kubectl apply -f ./k8s/ingress-subdominio.yaml
 ```
 
 Verifique se a regra de roteamento do ingres foi configurado corretamenta.
